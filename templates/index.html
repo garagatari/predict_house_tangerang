@@ -44,8 +44,15 @@
    <form action="{{ url_for('predict')}}"method="post">
     	<center><input type="text" name='Kamar Tidur' placeholder="Kamar Tidur" required="required" />
         <input type="text" name="Kamar Mandi" placeholder="Kamar Mandi" required="required" />
-		<input type="text" name="Luas Banungan" placeholder="Luas Bangunan" required="required" />
-        <input type="text" name="Luas Tanah" placeholder="Luas Tanah" required="required" /></center>
+    <div class="tooltip">  
+		<input type="text" name="Luas Banungan" placeholder="Luas Bangunan" class="tooltip" required="required" />
+    <span class="tooltiptext" id="top">Luas bangunan dalam satuan meter persegi (m2)</span>
+    </div>
+        <div class="tooltip"> 
+        <input type="text" name="Luas Tanah" placeholder="Luas Tanah" required="required" />
+        <span class="tooltiptext" id="top">Luas tanah dalam satuan meter persegi (m2)</span>
+        </div> 
+      </center>
     <div class="select">     
       <center>
             <label for="Tipe_Bangunan" width="100"></label>
