@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Prediksi Harga Rumah Bekas Tangerang Raya</title>
+  <link rel="shortcut icon" href="templates/favicon1.ico" />
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+
+<!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+<!-- jQuery library -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<!-- Popper JS -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+
+<!-- Latest compiled JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+</head>
+
+<body>
+<!-- Latest compiled JavaScript 
+  <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">Prediksi Harga Rumah Bekas Tangerang Raya</a>
+    </li>
+
+  </ul>
+</nav>
+-->
+
+
+  <div class="login">
+  <center> 
+    <h2>Prediksi Harga Rumah Bekas Tangerang Raya</h2>
+   <form action="{{ url_for('predict')}}"method="post">
+    	<center><input type="text" name='Kamar Tidur' placeholder="Kamar Tidur" required="required" />
+        <input type="text" name="Kamar Mandi" placeholder="Kamar Mandi" required="required" />
+		<input type="text" name="Luas Banungan" placeholder="Luas Bangunan" required="required" />
+        <input type="text" name="Luas Tanah" placeholder="Luas Tanah" required="required" /></center>
+    <div class="select">     
+      <center>
+            <label for="Tipe_Bangunan" width="100"></label>
+            <div class="tooltip">
+                        <select id="Tipe_Bangunan" name="Tipe_Bangunan" placeholder="Tipe Bangunan" class="tooltip" width="100" height="100" required>
+                            <option value="" disabled selected>Tipe Bangunan</option>
+                            <option value="1">Tipe 21</option>
+                            <option value="2">Tipe 36</option>
+                            <option value="3">Tipe 45</option>
+                            <option value="4">Tipe 54</option>
+                            <option value="5">Tipe 60</option>
+                            <option value="6">Tipe 70</option>
+                            <option value="7">Tipe 80</option>
+                            <option value="8">Tipe 90</option>
+                            <option value="9">Tipe 100</option>
+                            <option value="10">Tipe 110</option>
+                            <option value="11">Tipe 120</option>
+                            <option value="12">Tipe >120</option>
+                        </select>
+            <span class="tooltiptext" id="top">Tipe bangunan adalah luas bangunan, cth: luas bangunan 120 maka tipe nya adalah Tipe 120</span>
+            </div>
+            <label for="Fasilitas" width="100"></label>
+            <div class="tooltip">
+                        <select id="Fasilitas" name="Fasilitas" placeholder="Jumlah Fasilitas" class="tooltip" width="100" height="100" required>
+                            <option value="" disabled selected>Jumlah Fasilitas</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                        </select>
+            <span class="tooltiptext" id="top">Jumlah fasilitas adalah banyaknya fasilitas yang terdapat pada rumah yang diiklankan</span>
+            </div>
+        <label for="Kota" width="100"></label>
+                        <select id="Kota" name="Kota" placeholder="Kota" width="100" height="100" required>
+                            <option value="" disabled selected>Pilih Kota/Kabupaten</option>
+                            <option value="1">Kabupaten Tangerang</option>
+                            <option value="2">Kota Tangerang</option>
+                            <option value="3">Tangerang Selatan</option>
+                        </select>
+            <label for="Daerah" width="100"></label>
+                            <select id="Daerah" name="Daerah" required>
+                            <option value="" disabled selected>Pilih Daerah</option>
+                            <optgroup label="Kabupaten Tangerang">
+                            <option value="1">Rajeg</option>
+                            <option value="2">Panongan</option>
+                            <option value="3">Tigaraksa</option>
+                            <option value="5">Sepatan</option>
+                            <option value="6">Solear</option>
+                            <option value="7">Cisauk</option>
+                            <option value="8">Teluknaga</option>
+                            <option value="9">Pasar Kemis</option>
+                            <option value="10">Legok</option>
+                            <option value="11">Balaraja</option>
+                            <option value="13">Citra Raya</option>
+                            <option value="14">Kronjo</option>
+                            <option value="18">Cikupa</option>
+                            <option value="19">Curug</option>
+                            <option value="21">Sindang Jaya</option>
+                            <option value="25">Kelapa Dua</option>
+                            <option value="36">Pagedangan</option>
+                            </optgroup>
+                            <optgroup label="Kota Tangerang">
+                            <option value="4">Periuk</option>
+                            <option value="12">Batu Ceper</option>
+                            <option value="15">Pinang</option>
+                            <option value="16">Cibodas</option>
+                            <option value="17">Neglasari</option>
+                            <option value="20">Ciledug</option>
+                            <option value="23">Larangan</option>
+                            <option value="26">Cipondoh</option>
+                            <option value="30">Karang Tengah</option>
+                            <option value="31">Karawaci</option>
+                            <option value="33">Tangerang</option>
+                            <option value="34">Benda</option>
+                            </optgroup>
+                            <optgroup label="Tangerang Selatan">
+                            <option value="22">Pamulang</option>
+                            <option value="24">Pondok Aren</option>
+                            <option value="27">Ciputat</option>
+                            <option value="28">Serpong</option>
+                            <option value="29">Serpong Utara</option>
+                            <option value="32">Ciputat Timur</option>
+                            <option value="35">Gading Serpong</option>
+                            <option value="37">Bintaro</option>
+                            <option value="38">BSD</option>
+                            <option value="39">Alam Sutera</option>
+                            </optgroup>
+                            </select>
+      </center>
+    </div> 
+    <button type="submit" class="btn btn-primary btn-block btn-large">Prediksi</button>
+  </center> 
+  <br>
+  <a class='link' href="https://www.99.co/id/jual/rumah/tangerang?tipe_pasar=secondary" target="_blank">Cari rumah bekas Tangerang di sini</a>
+  </div>
+<!--     <button type="submit" class="btn btn-success btn-block btn-large">Predict</button>--> 
+
+
+   </form>
+
+<center><h4>{{ prediction_text }}</h4></center>
+
+</div>
+
+
+
+
+</body>
+</html>
